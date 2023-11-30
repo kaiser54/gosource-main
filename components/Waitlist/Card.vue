@@ -14,7 +14,7 @@
     </div>
     <div class="content">
       <h4 class="bold text-heading-4-bold text-grey-700">{{ data.title }}</h4>
-      <p class="regular text-body-small-regular text-grey-700">{{ data.snippet }}</p>
+      <p class="regular text-body-small-regular text-grey-500">{{ data.snippet }}</p>
     </div>
   </div>
 </template>

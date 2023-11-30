@@ -1574,6 +1574,7 @@ button.icon-left {
     height: 100%;
     outline: none;
     padding: calc(var(--spacing-unit) * 2);
+    padding-top: 27.5px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
