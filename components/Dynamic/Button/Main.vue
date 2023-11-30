@@ -5,7 +5,7 @@
     :class="buttonClasses"
     :disabled="disabled || isLoading"
   >
-    <div v-if="showText && !isLoading">{{ buttonText }}</div>
+    <span v-if="showText && !isLoading">{{ buttonText }}</span>
     <slot v-if="!isLoading" name="svg"></slot>
     <DynamicLoader :size="size" :isLoading="isLoading"/>
   </button>
