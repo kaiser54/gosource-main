@@ -45,8 +45,6 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 100vh;
-  justify-content: center;
   gap: calc(var(--spacing-unit) * 6);
 }
 
@@ -72,7 +70,4 @@ defineProps({
   max-width: 354px;
 }
 
-.w-auto {
-  width: auto;
-}
 </style>

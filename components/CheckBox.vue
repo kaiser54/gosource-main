@@ -2,8 +2,8 @@
   <svg
     :class="{ selected: clicked, onHover: isHovered }"
     viewBox="0 0 25 25"
-    width="25"
-    height="25"
+    width="20"
+    height="20"
   >
     <circle cx="12" cy="12" r="11" />
     <path

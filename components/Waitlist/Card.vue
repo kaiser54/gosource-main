@@ -95,4 +95,11 @@ const handleMouseLeave = () => {
   border: 1px solid var(--orange-orange-300);
 }
 
+.selected h4 {
+  color: var(--grey-900-base);
+}
+.selected p {
+  color: var(--grey-700);
+}
+
 </style>

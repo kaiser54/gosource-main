@@ -236,22 +236,28 @@ h6 {
     font-family: var(--secondary---font--family);
     /* graphik */
 }
-h1, h2 {
+
+h1,
+h2 {
     letter-spacing: calc(var(--base-letter---spacing) * 2);
 }
 
 h3 {
     letter-spacing: var(--base-letter---spacing);
 }
+
 h4 {
     letter-spacing: calc(var(--base-letter---spacing) + 0.2px);
 }
-h5, h6, p {
+
+h5,
+h6,
+p {
     letter-spacing: calc(var(--base-letter---spacing) + 0.3px);
 }
 
 .bold {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .medium {
@@ -259,7 +265,7 @@ h5, h6, p {
 }
 
 .regular {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .base-font,
@@ -1599,6 +1605,7 @@ button.icon-left {
     pointer-events: none;
     text-transform: capitalize;
     font-size: 14px;
+    font-weight: 300;
     color: var(--grey-500);
     transition: var(--animation-duration) ease-in-out;
     z-index: 1;
@@ -1653,4 +1660,8 @@ button.icon-left {
         transform: scale(1);
         opacity: 1;
     }
+}
+
+.w-auto {
+    width: auto;
 }
