@@ -66,12 +66,25 @@
   display: flex;
   width: 100%;
   height: 80px;
-  margin-left: 6%;
+  padding-left: 6%;
   align-items: center;
   background: var(--White);
   z-index: 9999;
 }
 .slot {
     margin-top: 155px;
+    padding-inline: 16px;
+}
+@media (max-width: 450px) {
+  .header {
+    height: 56px;
+    padding: 0;
+  }
+  .logo {
+    margin-inline: auto;
+  }
+  .slot {
+    margin-top: 80px;
+  }
 }
 </style>

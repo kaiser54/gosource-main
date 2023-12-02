@@ -44,6 +44,7 @@ svg circle {
   height: 100px;
   border-radius: 50%;
   opacity: 0.5;
+  transform-origin: center center;
   transition: all var(--animation-duration) ease-out;
 }
 

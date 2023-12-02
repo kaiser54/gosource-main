@@ -102,4 +102,10 @@ const handleMouseLeave = () => {
   color: var(--grey-700);
 }
 
+@media (max-width: 750px) {
+  .select-card {
+    max-width: 100%;
+  }
+}
+
 </style>

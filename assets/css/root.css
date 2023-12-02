@@ -1,7 +1,7 @@
 /* Declare global CSS variables in :root */
 :root {
     /* animation-duration */
-    --animation-duration: 300ms;
+    --animation-duration: 500ms;
     /* spacing unit */
     --spacing-unit: 0.5rem;
 

@@ -8,40 +8,34 @@
       @clickButton="nextStep()"
     >
       <template v-slot:content>
-        <transition appear mode="out-in">
-          <div class="card wrap" v-if="currentStep === 1">
-            <WaitlistCard
-              v-for="(data, index) in waitlistCardData"
-              :key="index"
-              :data="data"
-              :selectedItem="selectedItem"
-              @selectEvent="selectEvent($event)"
-            />
-          </div>
-        </transition>
-        <transition appear mode="out-in">
-          <div class="form wrap" v-if="currentStep === 2">
-            <DynamicInput
-              v-model="firstInput"
-              labelText="Email address"
-              type="number"
-              class="inputmee"
-            />
-            <DynamicInput
-              v-model="secondInput"
-              :labelText="selectedItem + ' name'"
-              type="number"
-              class="inputmee"
-            />
-          </div>
-        </transition>
+        <div class="card wrap" :class="{ animate: currentStep === 1 }">
+          <WaitlistCard
+            v-for="(data, index) in waitlistCardData"
+            :key="index"
+            :data="data"
+            :selectedItem="selectedItem"
+            @selectEvent="selectEvent($event)"
+          />
+        </div>
+        <div class="form wrap" :class="{ animate: currentStep === 2 }">
+          <DynamicInput
+            v-model="firstInput"
+            labelText="Email address"
+            type="number"
+            class="inputmee"
+          />
+          <DynamicInput
+            v-model="secondInput"
+            :labelText="selectedItem + ' name'"
+            type="number"
+            class="inputmee"
+          />
+        </div>
       </template>
     </WaitlistWrap>
-    <transition appear mode="out-in">
-      <div class="success-wrap" v-if="currentStep > 2">
-        <waitlistSuccess />
-      </div>
-    </transition>
+    <div class="success-wrap" :class="{ animate: currentStep > 2 }">
+      <waitlistSuccess />
+    </div>
   </WaitlistLayout>
 </template>
 
@@ -65,8 +59,7 @@ const waitlistCardData = ref([
   },
   {
     title: "GoSource for Individual",
-    snippet:
-      "Buy your food items with discounts, lesser prices and get them in 24hours",
+    snippet: "Buy your food items with discounts, lesser prices and get them in 24hours",
     value: "full",
     img: "/images/individual.svg",
   },
@@ -102,7 +95,14 @@ const nextStep = () => {
   align-items: flex-start;
   width: 100%;
   gap: calc(var(--spacing-unit) * 3);
-  transition: all 1s;
+
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-100px, 0px);
+  transition: all calc(var(--animation-duration));
+  height: 0;
+  scale: 0;
+  margin-top: -32px;
 }
 
 .card {
@@ -114,51 +114,33 @@ const nextStep = () => {
   max-width: 354px;
 }
 
+.form.wrap {
+  margin-top: -49px;
+}
+
 .success-wrap {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-/* Add the following styles for slide and fade effect */
-.slidefade-enter-active,
-.slidefade-leave-active {
-  transition: all ease 0.4s;
-}
-
-.slidefade-enter,
-.slidefade-leave-to {
+  scale: 0;
   opacity: 0;
-  transform: translateX(30px); /* Adjust the distance as needed */
+  transition: all calc(var(--animation-duration));
 }
 
-.slidefade-enter {
-  opacity: 0;
-  transform: translateX(-30px); /* Negative value for entering from the left */
-}
-.slidefade-leave-to {
-  transform: translateX(30px); /* Positive value for leaving to the right */
-}
-
-.v-enter-from {
-  opacity: 0;
-  translate: -100px 0px;
-}
-
-.v-enter-active {
-opacity: 0.3;
-translate: -50px -100px;
-}
-
-.v-enter-to {
+.animate {
   opacity: 1;
-  translate: 0 0;
+  height: auto;
+  margin-top: 0 !important;
+  transform: translate(0px, 0px);
+  margin-top: 0;
+  pointer-events: auto;
+  scale: 1;
 }
-.v-leave-from {
-  opacity: 1;
-  translate: 0 0;
-}
-.v-leave-to {
-  opacity: 0;
-  translate: 100px 0;
+
+@media (max-width: 750px) {
+  .wrap {
+    flex-direction: column;
+    max-width: 100%;
+  }
 }
 </style>

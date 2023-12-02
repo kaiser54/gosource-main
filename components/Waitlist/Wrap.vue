@@ -2,7 +2,10 @@
   <div class="wrap-wrapper">
     <div class="progress-header">
       <WaitlistProgressBar :currentStep="currentStep" />
-      <div class="header-content" :class="{ step1: currentStep === 1, step2: currentStep === 2 }">
+      <div
+        class="header-content"
+        :class="{ step1: currentStep === 1, step2: currentStep === 2 }"
+      >
         <h3 class="medium text-heading-3-medium">{{ data[currentStep - 1]?.title }}</h3>
         <p class="regular text-body-large-regular text-grey-500">
           {{ data[currentStep - 1]?.snippet }}
@@ -70,4 +73,26 @@ defineProps({
   max-width: 354px;
 }
 
+@media (max-width: 750px) {
+  .wrap-wrapper {
+    max-width: fit-content;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .progress-header {
+    align-items: center;
+  }
+  h3 {
+    font-size: var(--h3---heading-3--small--medium);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.3px;
+  }
+  p {
+    font-size: var(--body--small---body--small--bold);
+  }
+}
 </style>
