@@ -8,7 +8,7 @@
       @clickButton="nextStep()"
     >
       <template v-slot:content>
-        <div class="card wrap" v-if="currentStep === 1">
+        <div class="card wrap" v-show="currentStep === 1">
           <WaitlistCard
             v-for="(data, index) in waitlistCardData"
             :key="index"
@@ -17,7 +17,7 @@
             @selectEvent="selectEvent($event)"
           />
         </div>
-        <div class="form wrap" v-if="currentStep === 2">
+        <div class="form wrap" v-show="currentStep === 2">
           <DynamicInput
             v-model="firstInput"
             labelText="Email address"
@@ -33,7 +33,7 @@
         </div>
       </template>
     </WaitlistWrap>
-    <div class="success-wrap" v-if="currentStep > 2">
+    <div class="success-wrap" v-show="currentStep > 2">
       <waitlistSuccess />
     </div>
   </WaitlistLayout>

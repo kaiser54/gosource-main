@@ -49,6 +49,7 @@ defineProps({
   flex-direction: column;
   align-items: flex-start;
   gap: calc(var(--spacing-unit) * 6);
+  padding-bottom: 60px;
 }
 
 .progress-header {
