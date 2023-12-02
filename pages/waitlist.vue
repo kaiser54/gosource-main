@@ -95,14 +95,7 @@ const nextStep = () => {
   align-items: flex-start;
   width: 100%;
   gap: calc(var(--spacing-unit) * 3);
-
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(-100px, 0px);
   transition: all calc(var(--animation-duration));
-  height: 0;
-  scale: 0;
-  margin-top: -32px;
 }
 
 .card {
@@ -122,12 +115,10 @@ const nextStep = () => {
   width: 100%;
   display: flex;
   justify-content: center;
-  scale: 0;
-  opacity: 0;
   transition: all calc(var(--animation-duration));
 }
 
-.animate {
+/* .animate {
   opacity: 1;
   height: auto;
   margin-top: 0 !important;
@@ -135,7 +126,7 @@ const nextStep = () => {
   margin-top: 0;
   pointer-events: auto;
   scale: 1;
-}
+} */
 
 @media (max-width: 750px) {
   .wrap {
