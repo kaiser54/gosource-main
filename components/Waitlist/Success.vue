@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <img src="/images/Frame 1000002338.svg" alt="" />
+    <img src="/images/success.svg" alt="" />
     <div class="content">
       <h3 class="text-heading-3-medium medium text-grey-900-base">
         You’ve been successfully added to the waitlist!
